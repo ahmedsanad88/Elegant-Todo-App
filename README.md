@@ -10,6 +10,11 @@ keep track every single todo or note for every user, ability to update or check 
 
 [Golive](https://todo-app-38e69.web.app/)
 
+# Simple Demo:
+
+
+![Todo-app](https://user-images.githubusercontent.com/57454543/115328646-32d3c000-a191-11eb-8ff6-3eaeabf3ab15.gif)
+
 
 # Note:
 
