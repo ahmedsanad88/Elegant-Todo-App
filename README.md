@@ -13,7 +13,8 @@ keep track every single todo or note for every user, ability to update or check 
 # Simple Demo:
 
 
-![Todo-app](https://user-images.githubusercontent.com/57454543/115328646-32d3c000-a191-11eb-8ff6-3eaeabf3ab15.gif)
+![Todo-App1](https://user-images.githubusercontent.com/57454543/115329077-08363700-a192-11eb-8a63-280059a395eb.gif)
+
 
 
 # Note:
