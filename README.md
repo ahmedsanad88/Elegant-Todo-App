@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Todo-app (Desktop & Mobile friendly)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Todo app which helps you to keep tracking all your todo's & notes.
 
-## Available Scripts
+Including Login for security using login with google account, user friendly, 
+keep track every single todo or note for every user, ability to update or check and delete your todo.
 
-In the project directory, you can run:
 
-### `npm start`
+# How it's looking on live?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Golive](https://todo-app-38e69.web.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+# Note:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I used Firebase for backend & hosting and users Auth.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Technology Used (For Full Stack App)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React,
+Material UI,
+Firebase (Hosting / backend / Authentication),
+particles-js,
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+Use the package manager [npm] to install Todo-app dependencies.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage all dependencies used and version
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+All dependencies:
+ 
+```javascript-React
+"dependencies": {
 
-## Learn More
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "dotenv": "^8.2.0",
+    "firebase": "^8.4.1",
+    "particles.js": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-particles-js": "^3.4.1",
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
+Pull requests are welcome. For changes, please open an issue first to discuss what you would like to change.
 
-### Code Splitting
+Please make sure to update tests as appropriate.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Author
+Ahmed Sanad

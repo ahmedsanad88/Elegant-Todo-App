@@ -1,0 +1,10 @@
+.todo__list {
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(4, 55, 121, 0.8), rgba(5, 36, 77, 0.8));
+    box-shadow: 5px 3px 10px rgba(253, 253, 253, 0.5);
+    border-radius: 10px 0px 0px 10px;
+}
+
+.input__main {
+    color: whitesmoke !important;
+}

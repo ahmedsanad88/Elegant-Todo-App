@@ -1,0 +1,45 @@
+.header {
+    z-index: 10;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.header > h5 {
+    flex: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        width: 55%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .header {
+        width: 55%;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .header {
+        width: 60%;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .header {
+        width: 60%;
+    }
+}
