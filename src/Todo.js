@@ -56,15 +56,6 @@ function Todo(props) {
     };
 
 
-    // useEffect(() => {
-    //     db.collection('todos').doc(props.id).set({
-    //         checked: checked
-    //     },{merge: true});
-    //     return () => {
-    //         console.log("checked");
-    //     };
-    // }, [checked]);
-
     return (
         <>
             {/* modal to modify any note. */}
