@@ -43,12 +43,13 @@ function App() {
   useEffect(() => {    
     db.collection('todos').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       // and to get id for delete purpose we need id so we break it to an opject.
-      snapshot.docs.map(doc => console.log(doc.data()));
+      // snapshot.docs.map(doc => console.log(doc.data()));
       setTodos(snapshot.docs.map(doc => ({
         id: doc.id,
         userid: doc.data().userid,
         todo: doc.data().todo,
         timestamp: doc.data().timestamp,
+        checked: doc.data().checked,
       })));
     });
     // Cleaner
@@ -62,7 +63,8 @@ function App() {
       todo: input,
       userid: user.uid,
       // now to sort the todos we need to add timestamp from firebase to be unique.
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      checked: false,
     });
     // setTodos([...todos, input]);
     setInput('');
@@ -71,7 +73,7 @@ function App() {
   // converting time stamp into date.
   const convertTimestamp = (timestamp) => {
     let date = timestamp.toDate();
-    let mm = date.getMonth();
+    let mm = date.getMonth() + 1;
     let dd = date.getDate();
     let yyyy = date.getFullYear();
 
@@ -106,7 +108,7 @@ function App() {
         <ul className="app__todo">
         {/* Looping through all todos */}
           {selectedTodos && selectedTodos.map(todo => (
-            <Todo key={todo.id} id={todo.id} todo={todo.todo} timestamp={todo.timestamp && convertTimestamp(todo.timestamp)}/>
+            <Todo key={todo.id} id={todo.id} todo={todo.todo} timestamp={todo.timestamp && convertTimestamp(todo.timestamp)} checked ={todo.checked}/>
           ))}
         </ul>
       </div>

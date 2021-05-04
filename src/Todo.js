@@ -34,7 +34,8 @@ function Todo(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [input, setInput] = useState('');
-    const [checked, setChecked] = useState(false);
+    // closing checked state to prevent strange behaviour for onChange function as will be do the required after second click.
+    // const [checked, setChecked] = useState(false);
 
     const updateTodo = (event) => {
         // Now we need to reset and update the input.
@@ -44,6 +45,25 @@ function Todo(props) {
         setInput('');
         setOpen(false);
     };
+
+    const checkedNote =(e) => {
+        e.preventDefault();
+        db.collection('todos').doc(props.id).set({
+            checked: e.target.checked
+        },{merge: true});
+        // replacing setCheck() with direct deal with server.
+        // setChecked(e.target.checked);
+    };
+
+
+    // useEffect(() => {
+    //     db.collection('todos').doc(props.id).set({
+    //         checked: checked
+    //     },{merge: true});
+    //     return () => {
+    //         console.log("checked");
+    //     };
+    // }, [checked]);
 
     return (
         <>
@@ -62,11 +82,12 @@ function Todo(props) {
             {/* list of all todo details. */}
             <List className="todo__list">
                 <ListItem>
-                <ListItemText className="input__main" style={checked ? {textDecoration: "line-through"} : null} primary={ props.todo } secondary={props.timestamp} />
+                <ListItemText className="input__main" style={props.checked === true ? {textDecoration: "line-through"} : null} primary={ props.todo } secondary={props.timestamp} />
                 <Checkbox
                     color="default"
                     value={props.todo}
-                    onChange={(e) => setChecked(e.target.checked)}
+                    checked={props.checked}
+                    onChange={checkedNote}
                 />
                 </ListItem>
                 {/* to delete todo inline */}
