@@ -15,7 +15,7 @@ const Login = () => {
     return (
         <div className="login">
             <div className="login__telegram">
-                <img src="./src/Logo.png" alt="icon" />
+                <img src="./src/Note-logo.svg" alt="icon" />
                 <h1>Sanad-Keeper</h1>
                 <small>ToDo Note Web-App</small>
             </div>
