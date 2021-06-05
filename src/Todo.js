@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import db from './firebase';
 import "./Todo.css";
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
 
 // using style for Material UI Modal.
 const useStyles = makeStyles((theme) => ({
@@ -73,17 +74,20 @@ function Todo(props) {
             {/* list of all todo details. */}
             <List className="todo__list">
                 <ListItem>
-                <ListItemText className="input__main" style={props.checked === true ? {textDecoration: "line-through"} : null} primary={ props.todo } secondary={props.timestamp} />
+                <ListItemText className="input__main" style={props.checked === true ? {textDecoration: "line-through"} : null} primary={ props.todo } secondary={props.timestamp}/>
                 <Checkbox
                     color="default"
                     value={props.todo}
                     checked={props.checked}
                     onChange={checkedNote}
+                    style={{
+                        color: "#1C9C62",
+                    }}
                 />
                 </ListItem>
                 {/* to delete todo inline */}
-                <Button onClick={event => setOpen(true)}>Edit</Button>
-                <Button onClick={event => db.collection('todos').doc(props.id).delete()}><DeleteForeverIcon /></Button>
+                <Button onClick={event => setOpen(true)}><EditIcon /></Button>
+                <Button onClick={event => db.collection('todos').doc(props.id).delete()}><DeleteForeverIcon style={{color: "#BF2604"}} /></Button>
             </List>
         </>
     )

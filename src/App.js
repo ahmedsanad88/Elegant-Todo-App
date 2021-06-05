@@ -10,8 +10,7 @@ import { auth } from './firebase';
 import Login from "./Login";
 import Header from './Header';
 import Footer from './Footer';
-
-
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 function App() {
 
@@ -19,6 +18,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
   const [user, setUser] = useState(null);
+  const [counter, setCounter] = useState(0);
 
   // using useEffect to handle login with google auth and user data.
     useEffect(() => {
@@ -56,9 +56,20 @@ function App() {
     return console.log('Yeah, Updated');
   }, [user]);
 
+  // function to handle input with max length and update counter state
+  const checkInput = (e) => {
+    e.preventDefault();
+    const tempInput = e.target.value;
+    setCounter(tempInput.length);
+    if (tempInput.length === 255) {
+      alert("Reached to maximum numbers of letters");
+    }
+    setInput(e.target.value);
+  };
+
+  // adding todo function on submit.
   const addTodo = (event) => {
     event.preventDefault();
-
     db.collection('todos').add({
       todo: input,
       userid: user.uid,
@@ -68,6 +79,7 @@ function App() {
     });
     // setTodos([...todos, input]);
     setInput('');
+    setCounter(0);
   };
 
   // converting time stamp into date.
@@ -95,13 +107,17 @@ function App() {
         <form className="app__form">
           {/* <input value={input} onChange={e => setInput(e.target.value)}/> */}
           <FormControl className="app__input">
-            <InputLabel style={{paddingLeft: "10px", color: "gray"}} htmlFor="my-input"> Todo</InputLabel>
-            <Input style={{paddingLeft: "10px", color: "whitesmoke"}} className="app__input" value={input} onChange={e => setInput(e.target.value)} id="my-input" aria-describedby="my-helper-text" />
-            <FormHelperText style={{paddingLeft: "10px", paddingBottom: "5px", color: "whitesmoke", paddingTop: '10px'}} id="my-helper-text">✅ Add your todo's..
+            <InputLabel style={{paddingLeft: "10px", color: "gray"}} htmlFor="my-input">Add Todo...</InputLabel>
+            <Input style={{paddingLeft: "10px", paddingRight: "10px",color: "whitesmoke"}} className="app__input" value={input} onChange={checkInput} id="my-input" aria-describedby="my-helper-text" inputProps={{
+              maxLength: 255
+            }}/>
+            
+            <FormHelperText className="show__counter" style={{paddingLeft: "10px", paddingBottom: "5px", color: "whitesmoke", paddingTop: '10px'}} id="my-helper-text">✅ Organize your todo's.
+            <span id="count">{counter}/255</span>
             </FormHelperText>
           </FormControl>
           <Button className="app__btn" disabled={!input} type='submit' onClick={addTodo} variant="contained" color="default" style={{borderRadius: '0 10px 10px 0', boxShadow: '0px 0px 5px rgba(256, 256, 256, 0.5)', color: 'gray'}}>
-            Add Todo
+          <AddBoxIcon style={{fontSize: "35px", marginRight: "15px", marginLeft: "15px"}}/>
           </Button>
         </form>
 

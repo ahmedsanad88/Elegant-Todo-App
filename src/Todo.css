@@ -1,10 +1,58 @@
 .todo__list {
     text-align: center;
-    background-image: linear-gradient(to right, rgba(4, 55, 121, 0.8), rgba(5, 36, 77, 0.8));
-    box-shadow: 5px 3px 10px rgba(253, 253, 253, 0.5);
     border-radius: 10px 0px 0px 10px;
+    background-color: #F2F2F2;
+    box-shadow: inset 0 0 6px rgba(0 , 0, 0, 0.9);
+    animation: moveTodo 4s ease-in-out;
+    animation-iteration-count: 1;
 }
 
-.input__main {
-    color: whitesmoke !important;
+.MuiList-root {
+    margin: 10px 0px !important;
+    padding: 0;
+    position: relative;
+    list-style: none;
 }
+
+.MuiTypography-root {
+    padding: 5px !important;
+}
+
+@keyframes moveTodo {
+    from{
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+@-o-keyframes moveTodo {
+    from{
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+@-moz-keyframes moveTodo {
+    from{
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+@-webkit-keyframes moveTodo {
+    from{
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+
+
+.input__main {
+    color: #38358C !important;
+}
+
