@@ -6,6 +6,7 @@ import { auth, provider } from './firebase';
 
 const Login = () => {
 
+    // handle Popup login for user.
     const signIn = () => {
         auth.signInWithPopup(provider)
         .then(() => alert("login successfully."))

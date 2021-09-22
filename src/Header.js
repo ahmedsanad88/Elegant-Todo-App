@@ -2,7 +2,6 @@
 import { Avatar, IconButton } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import React from 'react';
-// import { Redirect } from "react-router";
 import { auth } from './firebase';
 import "./Header.css";
 
@@ -16,8 +15,8 @@ function Header(props) {
         <div className="header">
             <h5>Sanad Keeper</h5>
             <Avatar src={props.user && props.user.photo} alt="user" />
-            <IconButton>
-                <ExitToAppIcon onClick={handleLogout} style={{color: 'white'}}/>
+            <IconButton onClick={handleLogout}>
+                <ExitToAppIcon style={{color: 'white'}}/>
             </IconButton>
         </div>
     )

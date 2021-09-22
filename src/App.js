@@ -52,7 +52,7 @@ function App() {
         checked: doc.data().checked,
       })));
     });
-    // Cleaner
+    // Clean up return.
     return console.log('Yeah, Updated');
   }, [user]);
 
@@ -97,7 +97,7 @@ function App() {
     const selectedTodos = user && todos && todos.filter(todo => todo.userid === user.uid);
     // console.log(selectedTodos);
   
-
+  // contain Material UI form control.
   return (
     user ?
     <div className="app">
@@ -129,7 +129,7 @@ function App() {
         </ul>
       </div>
       <Footer />
-      {/* particles part */}
+      {/* particles part for snow showing in BG. */}
       <div className="particles__contact">
         <Particles 
           params={{ 
@@ -186,5 +186,4 @@ function App() {
     : <Login /> 
   );
 }
-
 export default App;

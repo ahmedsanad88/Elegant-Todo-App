@@ -110,6 +110,7 @@
     padding: 10px 5px;
 }
 
+/* Modify the interface to interact with screen size */
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .app__main {

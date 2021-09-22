@@ -1,6 +1,7 @@
 //jshint esversion:6
 import firebase from "firebase";
 
+// initailze firebase.
 const firebaseApp = firebase.initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "todo-app-38e69.firebaseapp.com",
@@ -11,6 +12,7 @@ const firebaseApp = firebase.initializeApp({
   measurementId: process.env.REACT_APP_MEASURE_ID
 });
 
+// declare database.
 const db = firebaseApp.firestore();
 // auth process.
 const auth = firebase.auth();

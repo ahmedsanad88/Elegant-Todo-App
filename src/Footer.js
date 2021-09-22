@@ -5,6 +5,7 @@ import CopyrightIcon from '@material-ui/icons/Copyright';
 
 function Footer() {
 
+    // dynamic date used for project.
     let date = new Date();
     let yyyy = date.getFullYear();
 
