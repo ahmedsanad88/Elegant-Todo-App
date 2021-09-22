@@ -5,9 +5,6 @@ Including Login for security using login with google account, user friendly, kee
 
 # How it's looking on live?
 
-[Golive](https://todo-app-38e69.web.app/
-# How it's looking on live?
-
 [Golive](https://todo-app-38e69.web.app/)
 
 
